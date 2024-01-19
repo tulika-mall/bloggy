@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { DotLoader } from 'react-spinners'
+import key from "../api";
 
 const BlogPageComponents = () => {
   return (
@@ -23,10 +24,10 @@ const Blogs = () => {
     const fetchCards = async (selectedCategory) => {
       setLoading(true)
       try {
-        let apiUrl = "http://127.0.0.1:8000/api/blogs/all/";
+        let apiUrl = `${key}api/blogs/all/`;
   
         if (selectedCategory) {
-          apiUrl = `http://127.0.0.1:8000/api/blogs/category/${selectedCategory}/`;
+          apiUrl = `${key}api/blogs/category/${selectedCategory}/`;
 
         }
   
@@ -49,7 +50,7 @@ const Blogs = () => {
       const fetchCategories = async () => {
         try {
           const response = await axios.get(
-            "http://127.0.0.1:8000/api/blogs/categories/all/"
+            `${key}api/blogs/categories/all/`
           );
           setCategories(response.data);
   

@@ -8,6 +8,7 @@ import over from "../assests/over.jpg";
 import axios from "axios";
 import { Link } from 'react-router-dom';
 import { DotLoader } from 'react-spinners'
+import key from "../api";
 
 const Hero = () => {
   return (
@@ -49,7 +50,7 @@ const FeaturedBlogs = () => {
     setCards([]);
     setLoading(true)
     try {
-      const res = await axios.get("http://127.0.0.1:8000/api/blogs/featured/");
+      const res = await axios.get(`${key}api/blogs/featured/`);
       setCards(res.data);
       console.log(res.data);
       setLoading(false)

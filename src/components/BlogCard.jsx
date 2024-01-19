@@ -10,7 +10,7 @@ export const BlogCard = () => {
 
         try{
 
-            const res = await axios.get('http://127.0.0.1:8000/api/blogs/featured/');
+            const res = await axios.get(`${key}api/blogs/featured/`);
             setCards(res.data);
             console.log(res.data);
         }
