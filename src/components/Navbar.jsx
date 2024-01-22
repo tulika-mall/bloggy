@@ -12,7 +12,7 @@ const Navbar = () => {
   <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
    <p className='text-lg'>Bloggy</p>
     <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-      <div className="fex space-x-4">
+      <div className="fex space-x-4 ">
         {user ? (
       <button 
         onClick={() => logout()}

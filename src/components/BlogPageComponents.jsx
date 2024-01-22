@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { DotLoader } from 'react-spinners'
 import key from "../api";
+import { Link } from 'react-router-dom';
 
 const BlogPageComponents = () => {
   return (
@@ -87,6 +88,8 @@ const Blogs = () => {
 
       <div className="grid mt-8 gap-8 md:grid-cols-2 lg:grid-cols-3 md:px-0 lg:px-4">
         {cards.map((item) => (
+          <Link
+          to={"/blogs/"+item.slug }>
           <div className="max-w-md  mx-auto mb-8">
             <div className="p-4 md:p-6 rounded-xl border border-gray-200 overflow-hidden">
               <img
@@ -118,6 +121,7 @@ const Blogs = () => {
               </div>
             </div>
           </div>
+          </Link>
         ))}
       </div>
         )}

@@ -97,6 +97,9 @@ const FeaturedBlogs = () => {
           
        
         {cards.map((item) => (
+          <Link
+          to={"/blogs/"+item.slug }
+          >
           <div className="max-w-md  mx-auto mb-8">
             <div className="p-4 md:p-6 rounded-xl border border-gray-200 overflow-hidden">
               <img
@@ -128,6 +131,7 @@ const FeaturedBlogs = () => {
               </div>
             </div>
           </div>
+          </Link>
         ))}
       </div>
         </>
